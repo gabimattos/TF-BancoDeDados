@@ -13,6 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use App\Http\Controllers\QuestionnaireController;
+use App\Http\Controllers\ListTypeController;
+
+Route::get('/', [QuestionnaireController::class, 'index']);
+
+
+Route::get('/questionario', function (){
+    return view('questionario');
+});
+
+Route::get('/resposta', function (){
+    return view('resposta');
+});
+
+Route::get('/tipos-de-questoes', function (){
+    return view('tipos-de-questoes');
+});
+
+Route::get('/questoes', function (){
+    return view('questoes');
 });
